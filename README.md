@@ -35,18 +35,18 @@ From the staging table, I would create multiple dim and fact tables to create a 
 
 <b>dim_time</b>: dim table of all time metrics/fields
 
-date_id (primary key), year, month, day, hour, day of the week, dayorder
+`date_id (primary key)`, `year`, `month`, `day`, `hour`, `day_of_the_week`, `day_of_the_week_num`
 
 <b>dim_location</b>: dim table of location, longitude/latitude, and other specific location descriptions
 
-location_id (primary key and foreign key to the fact table), location, locationdesc, locationtext, cnn, block, lot, x, y, latitude, longitude, location_2
+`location_id (primary key and foreign key to the fact table)`, `location`, `locationdesc`, `locationtext`, `cnn`, `block`, `lot`, `x`, `y`, `latitude`, `longitude`, `location_2`
 
 <b>dim_applicant</b>: dim table that includes properties of each applicant (food truck)
 
-permit(primary key and foreign key to the fact table), applicant, optionaltext, coldtruck
+`permit(primary key and foreign key to the fact table)`, `applicant`, `optionaltext`, `coldtruck`
 
 <b>fact_applicant</b>: fact table that consists of pk and fk to connect to dim tables
-permit(primary key and foreign key), starttime, endtime, dayorder, locationid (foreign key), addr_date_create, addr_date_modified
+`permit(primary key and foreign key)`, `starttime`, `endtime`, `dayorder`, `locationid (foreign key)`, `addr_date_create`, `addr_date_modified`
 
 ## Code snippet used to create psql table
 ```brew install postgresql```
